@@ -1,0 +1,24 @@
+{
+  "name": "risu",
+  "version": "1.0.0",
+  "description": "A simple Slack Bot to easily broadcast an upgrade to the company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-dexcom/Risu.git"
+  },
+  "author": "Fernando Martin Garcia Del Angel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martin-dexcom/Risu/issues"
+  },
+  "homepage": "https://github.com/martin-dexcom/Risu#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "slackbots": "^1.2.0"
+  }
+}
