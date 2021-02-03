@@ -100,7 +100,7 @@ const errorMessage = (error) => {
 
 app.post('/update', async (req, res) => {
     const query = req.body.text
-    console.log(req.body)
+
     if (!query) {
         const message = errorMessage('The message you sent was empty. Please try again.')
         res.json(message)
@@ -110,9 +110,32 @@ app.post('/update', async (req, res) => {
     const queries = query.split(',')
 
     const system = queries[0]
+    if(!system) {
+        const message = errorMessage('You need to include the name of the updated system. Please try again.')
+        res.json(message)
+        return
+    }
+
     const previousVersion = queries[1]
+    if(!previousVersion) {
+        const message = errorMessage('You need to include the previous version of the app. Please try again.')
+        res.json(message)
+        return
+    }
+
     const updatedVersion = queries[2]
+    if(!updatedVersion) {
+        const message = errorMessage('You need to include the new version of the app. Please try again.')
+        res.json(message)
+        return
+    }
+
     const reasoning = queries[3]
+    if(!reasoning) {
+        const message = errorMessage('You need to include the reasoning / description of the update. Please try again.')
+        res.json(message)
+        return
+    }
 
     const message = updateMessage(system, previousVersion, updatedVersion, reasoning)
     res.json(message)
